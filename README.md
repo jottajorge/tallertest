@@ -2,8 +2,6 @@
 
 Para acessar o demo clique [aqui](http://inclusivedigital.com.br/taller/usuario/login).
 
-Para visualizar as especificações do teste enviadas pela Taller, clique [aqui] [especificacoes].
-
 ***
 
 ## Entidades
@@ -14,35 +12,95 @@ As seguintes entidades foram identificadas no protótipo:
 
 **Campos:** Email, senha
 
-### Funcionalidades
+**Funcionalidades:**
 
-    Criar
-    Editar o próprio perfil
+* Criar
+* Editar o próprio perfil
 
 ### Empresa
 
 **Campos:** Nome fantasia, CNPJ
 
-### Funcionalidades
+**Funcionalidades:**
 
-    Criar nova
-    Listar
+* Criar nova
+* Listar
 
 ### Pedidos
 
 **Campos:** Empresa, Produto, Quantidade
 
-### Funcionalidades
+**Funcionalidades:**
 
-    Criar
-    Fechar
-    Excluir
-    Cancelar
-    Buscar
-    Listar
+* Criar
+* Fechar
+* Excluir
+* Cancelar
+* Buscar
+* Listar
 
 ### Produtos
 
 **Campos:** Nome
 
-Funcionalidades - Listar
+**Funcionalidades:**
+
+* Listar
+
+***
+
+## Bd
+
+![Banco de dados](https://drive.google.com/file/d/0B--mEXRkdLBQWFkyalRYZl9OSm8/view)
+
+
+### SQL
+
+    CREATE TABLE `empresa` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `nome` varchar(200) NOT NULL,
+      `cnpj` varchar(30) NOT NULL,
+      `ativo` int(11) NOT NULL DEFAULT '1',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB;
+
+    CREATE TABLE `item` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `quantidade` int(11) NOT NULL,
+      `produto` int(11) NOT NULL,
+      `pedido` int(11) NOT NULL,
+      `ativo` int(11) NOT NULL DEFAULT '1',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB;
+
+    CREATE TABLE `pedido` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `empresa` int(11) NOT NULL,
+      `ativo` int(11) NOT NULL DEFAULT '1',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB;
+
+    CREATE TABLE `produto` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `nome` varchar(100) NOT NULL,
+      `ativo` int(11) NOT NULL DEFAULT '1',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB;
+
+    CREATE TABLE `usuario` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `email` varchar(200) NOT NULL,
+      `senha` varchar(200) NOT NULL,
+      `ativo` int(11) DEFAULT '1',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB;
+
+***
+
+## Ambiente de desenvolvimento
+
+* [Scotch box 3.0](https://box.scotch.io/)
+* [Vagrant](https://www.vagrantup.com/)
+* [VirtualBox](https://www.virtualbox.org/)
+* [Git](https://git-scm.com)
+* [Atom](https://atom.io/)
