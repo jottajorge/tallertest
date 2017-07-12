@@ -51,7 +51,7 @@ As seguintes entidades foram identificadas no protótipo:
 
 ## Bd
 
-![Banco de dados](https://drive.google.com/file/d/0B--mEXRkdLBQWFkyalRYZl9OSm8/view)
+ ![Banco de dados](https://lh5.googleusercontent.com/RqLFUlyiDee4AlX9ZJYUvy2V0tAn8qjNs8icAm6fcYajt9fsyw3ItvcWOc_Miz84b6yMHWzlegj104o=w1360-h659)
 
 
 ### SQL
